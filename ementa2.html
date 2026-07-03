@@ -1,728 +1,903 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ementa - Congresso Internacional Porto 2026</title>
-    <style>
-        :root {
-            /* Cores Padrão Institucionais */
-            --jw-blue-dark: #1b365d;   
-            --jw-blue-light: #4a779d;  
-            --jw-gold: #b38f4f;        
-            --bg-color: #f7f9fc;
-            --card-bg: #ffffff;
-            --text-main: #2d3748;
-            --text-muted: #718096;
-            
-            /* Cores das Categorias e Alergénios */
-            --allergen-bg: #fff5f5;
-            --allergen-text: #c53030;
-            --veg-bg: #f0fff4;
-            --veg-text: #2f855a;
-            --gf-bg: #fefcbf;
-            --gf-text: #b7791f;
+
+<html lang="pt"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fcf9f3",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#2c3841",
+                        "on-primary-fixed-variant": "#294870",
+                        "surface-tint": "#426089",
+                        "secondary-fixed": "#ffdf9e",
+                        "inverse-primary": "#aac8f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#83a1ce",
+                        "primary-fixed-dim": "#aac8f7",
+                        "on-secondary-container": "#775800",
+                        "secondary": "#795902",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-white": "#FFFFFF",
+                        "outline": "#74777f",
+                        "surface-container": "#f0eee8",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#16375e",
+                        "tertiary-fixed": "#d7e4f0",
+                        "outline-variant": "#c3c6cf",
+                        "secondary-fixed-dim": "#ebc166",
+                        "category-meat": "#A63D33",
+                        "category-gluten": "#D98E32",
+                        "inverse-on-surface": "#f3f0ea",
+                        "tertiary-fixed-dim": "#bbc8d4",
+                        "on-tertiary-fixed": "#111d26",
+                        "on-secondary-fixed": "#261a00",
+                        "primary": "#002143",
+                        "category-veg": "#4B7C52",
+                        "inverse-surface": "#31312d",
+                        "surface-variant": "#e5e2dc",
+                        "on-surface-variant": "#43474e",
+                        "on-surface": "#1c1c18",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f6f3ed",
+                        "surface-dim": "#dcdad4",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#001c3a",
+                        "on-background": "#1c1c18",
+                        "background": "#fcf9f3",
+                        "category-dessert": "#6D4C8E",
+                        "secondary-container": "#fdd275",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#17232b",
+                        "on-tertiary-container": "#94a1ac",
+                        "surface-container-highest": "#e5e2dc",
+                        "surface": "#fcf9f3",
+                        "surface-container-high": "#ebe8e2",
+                        "on-tertiary-fixed-variant": "#3c4852"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "1rem",
+                        "item-gap": "1rem",
+                        "stack-lg": "2rem",
+                        "grid-gutter": "1.5rem",
+                        "section-padding": "4rem",
+                        "grid-margin": "2rem",
+                        "stack-sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Manrope", "sans-serif"],
+                        "label-caps": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["Manrope", "sans-serif"],
+                        "body-sm": ["Manrope", "sans-serif"],
+                        "display-lg": ["Manrope", "sans-serif"],
+                        "body-lg": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--bg-color);
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* HEADER INSTITUCIONAL */
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            background: #ffffff;
-            border-top: 8px solid var(--jw-blue-dark);
-            border-bottom: 4px solid var(--jw-gold);
-            padding: 40px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .logo-container {
-            margin-bottom: 20px;
-        }
-
-        .event-logo {
-            max-width: 280px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .meta-info {
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            color: var(--jw-blue-light);
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            font-weight: 800;
-            color: var(--jw-blue-dark);
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        header h3 {
-            font-weight: 500;
-            color: var(--text-muted);
-            font-size: 1.15em;
-        }
-
-        /* SECÇÃO DE FILTROS */
-        .filter-section {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            margin-bottom: 30px;
-            border: 1px solid #edf2f7;
-        }
-
-        .filter-group {
-            margin-bottom: 15px;
-        }
-
-        .filter-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .filter-label {
-            font-weight: 700;
-            color: var(--jw-blue-dark);
-            margin-bottom: 8px;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: block;
-        }
-
-        .btn-filter {
-            background: #edf2f7;
-            border: none;
-            color: var(--text-main);
-            padding: 8px 16px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9em;
-            transition: all 0.2s ease;
-        }
-
-        .btn-filter:hover {
-            background: #e2e8f0;
-        }
-
-        .btn-filter.active {
-            background: var(--jw-blue-dark);
-            color: #ffffff;
-        }
-
-        .checkbox-filter-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 5px;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            font-size: 0.9em;
-            font-weight: 600;
-            color: var(--text-main);
-            cursor: pointer;
-        }
-
-        .checkbox-label input {
-            margin-right: 6px;
-            accent-color: var(--jw-blue-dark);
-            width: 16px;
-            height: 16px;
-        }
-
-        /* GRID & CARDS */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .dish-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 24px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #edf2f7;
-        }
-
-        .dish-card.hidden {
-            display: none !important;
-        }
-
-        .dish-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px rgba(27, 54, 93, 0.06);
-            border-color: #cbd5e0;
-        }
-
-        .dish-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .dish-number {
-            font-size: 0.85em;
-            font-weight: 700;
-            color: var(--jw-blue-dark);
-            background: #edf2f7;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .badges-header-container {
-            display: flex;
-            gap: 4px;
-        }
-
-        .type-badge {
-            font-size: 0.7em;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .type-badge.v { background: var(--veg-bg); color: var(--veg-text); }
-        .type-badge.g { background: var(--gf-bg); color: var(--gf-text); }
-        .type-badge.m { background: #edf2f7; color: var(--jw-blue-dark); }
-        .type-badge.d { background: #e2e8f0; color: var(--text-main); }
-
-        .dish-title {
-            font-size: 1.15em;
-            font-weight: 700;
-            color: var(--jw-blue-dark);
-            line-height: 1.4;
-            margin-bottom: 10px;
-        }
-
-        .dish-body {
-            flex-grow: 1;
-        }
-
-        .lang-pt {
-            font-size: 0.95em;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .lang-en {
-            font-size: 0.9em;
-            font-style: italic;
-            color: var(--text-muted);
-            border-left: 2px solid var(--jw-blue-light);
-            padding-left: 8px;
-            margin-bottom: 15px;
-        }
-
-        /* BADGES */
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px dashed #e2e8f0;
-        }
-
-        .badge {
-            font-size: 0.75em;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-allergen {
-            background-color: var(--allergen-bg);
-            color: var(--allergen-text);
-        }
-
-        .badge-neutral {
-            background-color: #edf2f7;
-            color: var(--text-muted);
-        }
-
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
-            font-weight: 600;
-            background: #ffffff;
-            border-radius: 8px;
-            border: 1px dashed #cbd5e0;
-            display: none;
-        }
-
-        .info-notice {
-            background: #ffffff;
-            border-left: 4px solid var(--jw-gold);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            text-align: center;
-        }
-
-        .info-notice p {
-            font-size: 1.05em;
-            font-weight: 600;
-            color: var(--jw-blue-dark);
-        }
-
-        .info-notice p.en {
-            font-style: italic;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-top: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: var(--text-muted);
-            font-size: 0.85em;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.9em; }
-            body { padding: 20px 10px; }
-            header { padding: 30px 15px; }
-            .event-logo { max-width: 220px; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <header>
-        <div class="logo-container">
-            <img src="logo-congresso-2026.png" alt="Logótipo do Congresso Internacional" class="event-logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='block';">
-            <div id="logo-placeholder" style="display:none; font-weight:700; color:var(--jw-blue-dark); border:2px dashed var(--jw-gold); padding:15px; max-width:300px; margin:0 auto; border-radius:6px; font-size:0.9em; text-transform:uppercase; letter-spacing:1px;">
-                [ Espaço para o Logo Oficial ]<br><span style="font-size:0.8em; font-weight:400; color:var(--text-muted);">Substituir por logo-congresso-2026.png</span>
-            </div>
-        </div>
-        <div class="meta-info">Porto &bull; 2026</div>
-        <h1>EMENTA</h1>
-        <h3>Salão do Reino Darque &bull; 9 de Julho de 2026</h3>
-    </header>
-
-    <!-- ÁREA DE FILTROS -->
-    <div class="filter-section">
-        <div class="filter-group">
-            <span class="filter-label">Tipo de Prato / Dish Type</span>
-            <div id="type-filters">
-                <button class="btn-filter active" data-type="all">Todos / All</button>
-                <button class="btn-filter" data-type="veg">Vegetariano / Vegetarian</button>
-                <button class="btn-filter" data-type="gf">Sem Glúten / Gluten-Free</button>
-                <button class="btn-filter" data-type="meat-fish">Carne e Peixe / Meat & Fish</button>
-                <button class="btn-filter" data-type="dessert">Frutas e Sobremesas / Desserts</button>
-            </div>
-        </div>
-        
-        <div class="filter-group">
-            <span class="filter-label">Restrições Alimentares (Ocultar pratos com)</span>
-            <div class="checkbox-filter-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" value="gluten" class="allergen-checkbox"> Ocultar pratos com Glúten
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" value="laticinios" class="allergen-checkbox"> Ocultar pratos com Laticínios
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" value="ovos" class="allergen-checkbox"> Ocultar pratos com Ovos
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <!-- CARDS DA EMENTA -->
-    <div class="grid" id="menu-grid">
-        <div class="no-results" id="no-results-msg">Nenhum prato corresponde aos filtros selecionados.</div>
-
-        <!-- ENTRADAS / VEGETARIANOS -->
-        <div class="dish-card" data-dish-type="veg" data-allergens="gluten">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#01</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
-                </div>
-                <div class="dish-title">Mini Empadas (legumes) / Vegetable mini pies</div>
-                <p class="lang-pt">Massa de trigo, legumes variados (alho francês, pimento, couve coração, cenoura), especiarias.</p>
-                <p class="lang-en">Wheat dough, mixed vegetables (leek, pepper, spring greens, carrot), spices.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg" data-allergens="gluten">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#02</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
-                </div>
-                <div class="dish-title">Mini Chamuças (legumes) / Vegetable samosas</div>
-                <p class="lang-pt">Massa de chamuça, batata, legumes variados, especiarias.</p>
-                <p class="lang-en">Samosa pastry, potato, mixed vegetables, spices.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg" data-allergens="gluten sésamo">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#03</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
-                </div>
-                <div class="dish-title">Mini Tostas / Mini toasts</div>
-                <p class="lang-pt">Tostas de trigo, polpa de azeitona, grão-de-bico, tahini, azeite, alho.</p>
-                <p class="lang-en">Wheat toasts, olive pulp, chickpeas, tahini, olive oil, garlic.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-                <span class="badge badge-allergen">Sésamo</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg" data-allergens="laticinios">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#04</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
-                </div>
-                <div class="dish-title">Tábua de Queijos Variados / Assorted cheese board</div>
-                <p class="lang-pt">Variedade de queijos curados e/ou amanteigados (leite).</p>
-                <p class="lang-en">Assorted cured and soft cheeses (milk).</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Lacticínios</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg gf" data-allergens="">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#05</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Azeitonas / Olives</div>
-                <p class="lang-pt">Azeitonas inteiras em salmoura.</p>
-                <p class="lang-en">Whole olives in brine.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-neutral">Sem Alergénios</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg gf" data-allergens="tremoço">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#06</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Tremoços / Lupin beans</div>
-                <p class="lang-pt">Tremoços em salmoura.</p>
-                <p class="lang-en">Lupin beans in brine.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Tremoço</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg" data-allergens="gluten">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#07</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
-                </div>
-                <div class="dish-title">Pão (com glúten) / Bread</div>
-                <p class="lang-pt">Farinha de trigo, água, fermento, sal.</p>
-                <p class="lang-en">Wheat flour, water, yeast, salt.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg gf" data-allergens="">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#08</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Caldo Verde / Traditional kale soup</div>
-                <p class="lang-pt">Batata, couve galega cortada fina, azeite, alho, sal.</p>
-                <p class="lang-en">Potato, thinly shredded kale, olive oil, garlic, salt.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-neutral">Sem Alergénios</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="veg gf" data-allergens="">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#09</span>
-                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Pão (Sem Glúten) / Gluten-free bread</div>
-                <p class="lang-pt">Farinhas isentas de glúten (arroz, amido de milho, batata), água, levedura.</p>
-                <p class="lang-en">Gluten-free flours (rice, corn starch, potato), water, yeast.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-neutral">Sem Alergénios</span>
-            </div>
-        </div>
-
-        <!-- PRATOS ISENTOS DE GLÚTEN COMPARTILHADOS -->
-        <div class="dish-card" data-dish-type="gf" data-allergens="ovos peixe">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#10</span>
-                    <div class="badges-header-container"><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Mini Pataniscas (SG) / GF Pataniscas</div>
-                <p class="lang-pt">Farinha sem glúten, bacalhau ou legumes, ovo, salsa.</p>
-                <p class="lang-en">Gluten-free flour, salt cod or vegetables, egg, parsley.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Ovos</span>
-                <span class="badge badge-allergen">Peixe</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="gf" data-allergens="peixe ovos">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#11</span>
-                    <div class="badges-header-container"><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Salada de Feijão Frade / Tuna salad</div>
-                <p class="lang-pt">Feijão frade, atum, cebola, salsa, azeite, vinagre, ovo.</p>
-                <p class="lang-en">Black-eyed beans, tuna, onion, parsley, olive oil, vinegar, egg.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Peixe</span>
-                <span class="badge badge-allergen">Ovos</span>
-            </div>
-        </div>
-
-        <!-- CARNE E PEIXE -->
-        <div class="dish-card" data-dish-type="meat-fish" data-allergens="gluten ovos">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#12</span>
-                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span></div>
-                </div>
-                <div class="dish-title">Mini Croquetes de Carne / Meat croquettes</div>
-                <p class="lang-pt">Carne picada, chouriço, cebola, farinha, pão ralado, clara de ovo.</p>
-                <p class="lang-en">Minced meat, chorizo, onion, flour, breadcrumbs, egg white.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-                <span class="badge badge-allergen">Ovos</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="meat-fish" data-allergens="ovos peixe">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#13</span>
-                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span></div>
-                </div>
-                <div class="dish-title">Mini Bolinhos de Bacalhau / Codfish cakes</div>
-                <p class="lang-pt">Bacalhau, batata, ovos, salsa, cebola, azeite.</p>
-                <p class="lang-en">Codfish, potato, eggs, parsley, onion, olive oil.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Ovos</span>
-                <span class="badge badge-allergen">Peixe</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="meat-fish gf" data-allergens="">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#14</span>
-                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Frango de Churrasco / BBQ chicken</div>
-                <p class="lang-pt">Frango, alho, louro, azeite, sal, piripiri.</p>
-                <p class="lang-en">Chicken, garlic, bay leaf, olive oil, salt, piri-piri.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-neutral">Sem Alergénios</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="meat-fish" data-allergens="gluten">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#15</span>
-                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span></div>
-                </div>
-                <div class="dish-title">Bifanas no Pão / Pork bifanas in bread</div>
-                <p class="lang-pt">Carne de porco, pão de trigo, alho, louro, vinho, cerveja.</p>
-                <p class="lang-en">Pork, wheat bread, garlic, bay leaf, wine, beer.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-            </div>
-        </div>
-
-        <!-- SOBREMESAS -->
-        <div class="dish-card" data-dish-type="dessert veg gf" data-allergens="">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#16</span>
-                    <div class="badges-header-container"><span class="type-badge d">Doce</span><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Espetadas de Fruta Variada / Fruit skewers</div>
-                <p class="lang-pt">Morangos, uvas, melancia, melão, cerejas, abacaxi.</p>
-                <p class="lang-en">Strawberries, grapes, watermelon, melon, cherries, pineapple.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-neutral">Sem Alergénios</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="dessert veg" data-allergens="gluten ovos laticinios">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#17</span>
-                    <div class="badges-header-container"><span class="type-badge d">Doce</span><span class="type-badge v">Veg</span></div>
-                </div>
-                <div class="dish-title">Pastel de Nata / Custard tart</div>
-                <p class="lang-pt">Massa folhada, leite, ovos, açúcar, canela.</p>
-                <p class="lang-en">Puff pastry, milk, eggs, sugar, cinnamon.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Glúten</span>
-                <span class="badge badge-allergen">Ovos</span>
-                <span class="badge badge-allergen">Lacticínios</span>
-            </div>
-        </div>
-
-        <div class="dish-card" data-dish-type="dessert veg gf" data-allergens="ovos">
-            <div class="dish-body">
-                <div class="dish-header">
-                    <span class="dish-number">#18</span>
-                    <div class="badges-header-container"><span class="type-badge d">Doce</span><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
-                </div>
-                <div class="dish-title">Pão de Ló (Sem Glúten) / GF Sponge cake</div>
-                <p class="lang-pt">Ovos, açúcar, farinha de arroz, amido de milho.</p>
-                <p class="lang-en">Eggs, sugar, rice flour, corn starch.</p>
-            </div>
-            <div class="tags-container">
-                <span class="badge badge-allergen">Ovos</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="info-notice">
-        <p>Em caso de alergias ou dúvidas sobre ingredientes, por favor contacte a equipa de serviço.</p>
-        <p class="en">If you have allergies or questions about ingredients, please ask the serving team.</p>
-    </div>
-
-    <footer>
-        Porto &bull; 2026 &bull; Sistema de Consulta Digital
-    </footer>
-
+    }catch(_e){}</script></head><body class="bg-surface-bright text-on-surface font-body-lg min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary-container docked full-width top shadow-md">
+<div class="flex flex-col w-full px-6 py-4 md:px-12 max-w-full">
+<div class="flex justify-between items-center w-full pb-4">
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-on-primary/70 dark:text-on-primary-container/70 tracking-widest uppercase">Congresso Internacional Porto 2026</span>
+<h1 class="text-display-lg font-display-lg font-bold text-on-primary dark:text-on-primary-container mt-1">Ementa</h1>
+<p class="text-title-md font-title-md text-on-primary/80 mt-2">Salão do Reino Darque · 9 de Julho de 2026</p>
 </div>
-
+</div>
+<div class="w-full relative mt-4 mb-6">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-white/10 border border-outline-variant/30 text-on-primary placeholder-on-primary/50 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed transition-all" placeholder="Procurar pratos ou alergénios / Search dish or allergen" type="text"/>
+</div>
+<nav class="flex overflow-x-auto hide-scrollbar gap-stack-md pb-2 mt-2 w-full">
+<a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps flex items-center gap-2 transition-colors" data-target="todos" href="#todos">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+                    Todos
+                </a>
+<a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-primary hover:bg-surface-white/10 transition-colors font-label-caps text-label-caps flex items-center gap-2" data-target="vegetarianos" href="#vegetarianos">
+                    Vegetarianos
+                </a>
+<a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-primary hover:bg-surface-white/10 transition-colors font-label-caps text-label-caps flex items-center gap-2" data-target="sem-gluten" href="#sem-gluten">
+                    Sem Glúten
+                </a>
+<a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-primary hover:bg-surface-white/10 transition-colors font-label-caps text-label-caps flex items-center gap-2" data-target="carne-peixe" href="#carne-peixe">
+                    Carne &amp; Peixe
+                </a>
+<a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-primary hover:bg-surface-white/10 transition-colors font-label-caps text-label-caps flex items-center gap-2" data-target="frutas-sobremesas" href="#frutas-sobremesas">
+                    Frutas &amp; Sobremesas
+                </a>
+</nav>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-section-padding flex flex-col gap-section-padding">
+<!-- Category: Vegetarianos -->
+<section class="scroll-mt-32 category-section" id="vegetarianos">
+<div class="flex items-center gap-4 mb-stack-lg border-b border-outline-variant pb-2">
+<div class="w-4 h-4 rounded-full bg-category-veg"></div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Pratos Vegetarianos · Vegetarian Dishes</h2>
+<span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">13 Itens</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Empadas (legumes)</h3>
+<span class="text-body-sm text-outline italic">Vegetable samosas</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Massa de trigo, legumes variados, especiarias.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Wheat dough, mixed vegetables, spices.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Chamuças (legumes)</h3>
+<span class="text-body-sm text-outline italic">Vegetable samosas</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Massa de chamuça, batata, legumes variados, especiarias.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Samosa pastry, potato, mixed vegetables, spices.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Tostas</h3>
+<span class="text-body-sm text-outline italic">Mini toasts</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Tostas de trigo, pasta de azeitona, hummus, grão-de-bico, tahini.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Wheat toasts, olive paste, hummus, chickpeas, tahini.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Sésamo · Sesame</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Tábua de Queijos Variados</h3>
+<span class="text-body-sm text-outline italic">Assorted cheese board</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Seleção de queijos curados e macios.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Assorted cured/soft cheeses.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-dessert/10 text-category-dessert border border-category-dessert/20">Leite · Milk</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Azeitonas</h3>
+<span class="text-body-sm text-outline italic">Olives</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Azeitonas inteiras em salmoura.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Whole olives in brine.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Tremoços</h3>
+<span class="text-body-sm text-outline italic">Lupin beans</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Tremoços em salmoura.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Lupin beans in brine.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Tremoço · Lupin</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">7</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pão</h3>
+<span class="text-body-sm text-outline italic">Bread</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Pão de farinha de trigo (variedades com glúten).</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Wheat flour bread.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">8</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Broa</h3>
+<span class="text-body-sm text-outline italic">Corn/rye bread</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Broa de milho e centeio.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Corn/rye bread.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">9</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Caldo Verde</h3>
+<span class="text-body-sm text-outline italic">Traditional kale soup</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Batata, couve galega cortada fina, azeite, alho.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Potato, kale, olive oil, garlic.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">10</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Salada de Tomate Simples</h3>
+<span class="text-body-sm text-outline italic">Simple tomato salad</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Tomate, azeite, vinagre, orégãos.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Tomato, olive oil, vinegar, oregano.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">11</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pepino Temperado</h3>
+<span class="text-body-sm text-outline italic">Seasoned cucumber</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Pepino, azeite, vinagre, orégãos.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Cucumber, olive oil, vinegar, oregano.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">12</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pão (Versão Sem Glúten)</h3>
+<span class="text-body-sm text-outline italic">Gluten-free bread</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Farinhas sem glúten.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Gluten-free flours.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">13</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Alface Temperada</h3>
+<span class="text-body-sm text-outline italic">Seasoned lettuce</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Alface, azeite, vinagre, orégãos.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Lettuce, olive oil, vinegar, oregano.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Sem Glúten -->
+<section class="scroll-mt-32 category-section" id="sem-gluten">
+<div class="flex items-center gap-4 mb-stack-lg border-b border-outline-variant pb-2">
+<div class="w-4 h-4 rounded-full bg-category-gluten"></div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Pratos Sem Glúten · Gluten-Free Dishes</h2>
+<span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">8 Itens</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Caldo Verde</h3>
+<span class="text-body-sm text-outline italic">Traditional kale soup</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Batata, couve galega, azeite, alho.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Potato, kale, olive oil, garlic.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Pataniscas (Bacalhau/Legumes)</h3>
+<span class="text-body-sm text-outline italic">Cod or vegetable fritters</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Farinha sem glúten, bacalhau ou vegetais, ovo, salsa.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>GF flour, cod or veggies, egg, parsley.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Salada de Feijão Frade com Atum</h3>
+<span class="text-body-sm text-outline italic">Black-eyed peas salad with tuna</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Feijão frade, atum, cebola, ovo.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Black-eyed peas, tuna, onion, egg.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Salada de Tomate Simples</h3>
+<span class="text-body-sm text-outline italic">Simple tomato salad</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Tomate, azeite, vinagre.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Tomato, olive oil, vinegar.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pepino Temperado</h3>
+<span class="text-body-sm text-outline italic">Seasoned cucumber</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Pepino, azeite, vinagre.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Cucumber, olive oil, vinegar.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pão (Versão Sem Glúten)</h3>
+<span class="text-body-sm text-outline italic">Gluten-free bread</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Pão sem glúten.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Gluten-free bread.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">7</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Alface Temperada</h3>
+<span class="text-body-sm text-outline italic">Seasoned lettuce</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Alface, azeite, vinagre.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Lettuce, olive oil, vinegar.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">8</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pão de Ló (Sem Glúten)</h3>
+<span class="text-body-sm text-outline italic">Gluten-free sponge cake</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Ovos, açúcar, farinha de arroz, amido de milho.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Eggs, sugar, rice flour, corn starch.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Carne & Peixe -->
+<section class="scroll-mt-32 category-section" id="carne-peixe">
+<div class="flex items-center gap-4 mb-stack-lg border-b border-outline-variant pb-2">
+<div class="w-4 h-4 rounded-full bg-category-meat"></div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Carne &amp; Peixe · Meat &amp; Fish</h2>
+<span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">12 Itens</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Croquetes de Carne</h3>
+<span class="text-body-sm text-outline italic">Meat croquettes</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Carne picada, chouriço, cebola, cenoura.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Minced meat, chorizo, onion, carrot.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Rissóis de Carne</h3>
+<span class="text-body-sm text-outline italic">Meat pastries</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Rissóis de carne.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Meat pastries.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Bolinhos de Bacalhau</h3>
+<span class="text-body-sm text-outline italic">Codfish cakes</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Bacalhau, batata, ovos, salsa.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Codfish, potato, eggs, parsley.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Panados (frango, peru)</h3>
+<span class="text-body-sm text-outline italic">Schnitzels</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Panados de frango e peru.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Schnitzels (chicken, turkey).</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Frango de Churrasco</h3>
+<span class="text-body-sm text-outline italic">BBQ chicken</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Frango no churrasco.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>BBQ chicken.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Rojões</h3>
+<span class="text-body-sm text-outline italic">Pork cubes</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Cubos de carne de porco.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Pork cubes.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">7</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Feijoada à Transmontana</h3>
+<span class="text-body-sm text-outline italic">Bean stew with pork</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Feijoada tradicional com carne de porco.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Bean stew with pork.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">8</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Bifanas no Pão</h3>
+<span class="text-body-sm text-outline italic">Pork bifanas in bread</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Bifanas de porco servidas no pão.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Pork bifanas in bread.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">9</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Moelas</h3>
+<span class="text-body-sm text-outline italic">Chicken gizzards</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Moelas de frango estufadas.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Chicken gizzards.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">10</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Mini Filetes de Pescada</h3>
+<span class="text-body-sm text-outline italic">Hake fillets</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Filetes de pescada panados.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Hake fillets.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-fixed/50 text-on-secondary-fixed border border-secondary/20">Crustáceos · Crustaceans</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">11</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Orelheira de Porco</h3>
+<span class="text-body-sm text-outline italic">Pig ear with green sauce</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Orelheira de porco com molho verde.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Pig ear with green sauce.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">12</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Paio/Presunto/Chouriço Fatiado</h3>
+<span class="text-body-sm text-outline italic">Cured pork meats</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Carnes de porco curadas.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Cured pork meats.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Frutas & Sobremesas -->
+<section class="scroll-mt-32 category-section" id="frutas-sobremesas">
+<div class="flex items-center gap-4 mb-stack-lg border-b border-outline-variant pb-2">
+<div class="w-4 h-4 rounded-full bg-category-dessert"></div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Frutas &amp; Sobremesas · Fruits &amp; Desserts</h2>
+<span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">6 Itens</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Espetadas de Fruta</h3>
+<span class="text-body-sm text-outline italic">Fruit skewers</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Morangos, uvas, melancia, etc.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Strawberries, grapes, watermelon, etc.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Fruta Fresca Variada</h3>
+<span class="text-body-sm text-outline italic">Various Fresh Fruits</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Morangos, uvas, melancia, melão, cerejas, ananás.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Strawberries, Grapes, Watermelon, Melon, Cherries, Pineapple.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pastel de Nata</h3>
+<span class="text-body-sm text-outline italic">Custard tart</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Pastel de nata tradicional.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Custard tart.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-dessert/10 text-category-dessert border border-category-dessert/20">Leite · Milk</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Pão de Ló</h3>
+<span class="text-body-sm text-outline italic">Sponge cake</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Pão de ló tradicional.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Sponge cake.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Bolos/Doces Regionais</h3>
+<span class="text-body-sm text-outline italic">Regional sweets</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Variedade de doçaria regional.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Assorted regional sweets.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-dessert/10 text-category-dessert border border-category-dessert/20">Leite · Milk</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Frutos Casca Rija · Tree nuts</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
+<div class="flex flex-col">
+<h3 class="text-title-md font-title-md text-on-surface">Marmelada/Compotas</h3>
+<span class="text-body-sm text-outline italic">Quince jam/Fruit preserves</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-1 pl-12">
+<p class=""><span class="font-bold text-primary mr-1">PT</span>Marmelada e compotas variadas.</p>
+<p class=""><span class="font-bold text-primary mr-1">EN</span>Quince jam/Fruit preserves.</p>
+</div>
+<div class="mt-auto pt-4 flex flex-wrap gap-2 pl-12 border-t border-surface-variant">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 pb-safe md:hidden bg-surface-bright/80 backdrop-blur-md dark:bg-surface-dim/80 border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed font-bold scale-95 duration-150 p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Ementa</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-all rounded-lg p-2">
+<span class="material-symbols-outlined">search</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Pesquisar</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-all rounded-lg p-2">
+<span class="material-symbols-outlined">warning</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">Alergénios</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 md:px-12 mt-12 flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container dark:bg-tertiary-container border-t border-outline-variant">
+<div class="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
+<span class="text-label-caps font-bold text-primary dark:text-secondary-fixed">Legenda de Alergénios</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-tertiary-container max-w-md">Em caso de alergias ou dúvidas sobre ingredientes, por favor contacte a equipa de serviço. / If you have allergies or questions about ingredients, please ask the serving team.</p></div></footer>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const typeButtons = document.querySelectorAll('#type-filters .btn-filter');
-        const checkboxes = document.querySelectorAll('.allergen-checkbox');
-        const cards = document.querySelectorAll('.dish-card');
-        const noResultsMsg = document.getElementById('no-results-msg');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categorySections = document.querySelectorAll('.category-section');
 
-        let currentType = 'all';
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = btn.getAttribute('data-target');
 
-        typeButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                typeButtons.forEach(btn => btn.classList.remove('active'));
-                e.target.classList.add('active');
-                currentType = e.target.getAttribute('data-type');
-                filterMenu();
-            });
-        });
+                // Update button active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed');
+                    b.classList.add('border', 'border-outline-variant', 'text-on-primary', 'hover:bg-surface-white/10');
+                });
+                btn.classList.remove('border', 'border-outline-variant', 'text-on-primary', 'hover:bg-surface-white/10');
+                btn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed');
 
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', filterMenu);
-        });
-
-        function filterMenu() {
-            const excludedAllergens = Array.from(checkboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
-
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const dishTypes = card.getAttribute('data-dish-type').split(' ');
-                const dishAllergens = card.getAttribute('data-allergens').split(' ');
-
-                const matchesType = (currentType === 'all' || dishTypes.includes(currentType));
-                const hasExcludedAllergen = excludedAllergens.some(allergen => dishAllergens.includes(allergen));
-
-                if (matchesType && !hasExcludedAllergen) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
+                // Filter sections
+                categorySections.forEach(section => {
+                    if (target === 'todos' || section.id === target) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+                
+                // Optional: Smooth scroll to top of list when filtering
+                if(target !== 'todos') {
+                    window.scrollTo({
+                        top: document.querySelector('main').offsetTop - 100,
+                        behavior: 'smooth'
+                    });
                 }
             });
-
-            noResultsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
-        }
+        });
     });
 </script>
-
-</body>
-</html>
+</body></html>
