@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Ementa · Salão do Reino Darque · Congresso Internacional Porto 2026</title>
+<style>
+  :root{
+    --navy:#16375E;
+    --navy-deep:#0E2A47;
+    --gold:#C9A24B;
+    --gold-soft:#E7D3A0;
+    --cream:#FAF7F1;
+    --paper:#FFFFFF;
+    --ink:#1E2A33;
+    --ink-soft:#5B6B76;
+    --line:#E4DECE;
+    --veg:#4B8A5E;
+    --veg-bg:#E7F1E9;
+    --sg:#C98A2C;
+    --sg-bg:#FBEFDC;
+    --outro:#7C8891;
+    --outro-bg:#EDEFF0;
+    --fruit:#C1476B;
+    --fruit-bg:#F8E7ED;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0; width:100%; overflow-x:hidden;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:40px;
+    max-width:600px;
+    margin:0 auto;
+  }
+  .display{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;}
+
+  /* ---------- Header ---------- */
+  header{
+    background:linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+    color:#fff;
+    padding:22px 18px 26px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:6px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 14px, transparent 14px 22px);
+    opacity:.9;
+  }
+  .brand-row{display:flex; align-items:center; gap:12px;}
+  .ship-logo{flex:none; width:46px; height:46px;}
+  .brand-text{flex:1; min-width:0;}
+  .event-label{
+    font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold-soft); font-weight:600; margin:0 0 2px;
+  }
+  .event-title{
+    font-size:13px; line-height:1.25; margin:0; color:#EDEFF2; font-weight:500;
+  }
+  h1.menu-title{
+    font-size:30px; margin:16px 0 4px; letter-spacing:.04em; color:#fff; font-weight:700;
+  }
+  .menu-sub{
+    font-size:13.5px; color:var(--gold-soft); margin:0;
+  }
+
+  /* ---------- Search ---------- */
+  .search-wrap{
+    padding:14px 16px 4px; background:var(--cream);
+  }
+  .search-box{
+    display:flex; align-items:center; gap:8px;
+    background:var(--paper); border:1px solid var(--line); border-radius:999px;
+    padding:9px 14px; box-shadow:0 1px 2px rgba(20,30,40,.04);
+  }
+  .search-box svg{flex:none; opacity:.5;}
+  .search-box input{
+    border:none; outline:none; background:transparent; flex:1;
+    font-size:15px; color:var(--ink); font-family:inherit;
+  }
+  .search-box input::placeholder{color:#9AA6AD;}
+
+  /* ---------- Tabs ---------- */
+  .tabs{
+    display:flex; gap:8px; overflow-x:auto; padding:12px 16px 10px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{
+    flex:none; display:flex; align-items:center; gap:6px;
+    padding:9px 14px; border-radius:999px; font-size:13.5px; font-weight:600;
+    background:var(--paper); color:var(--ink-soft); border:1px solid var(--line);
+    white-space:nowrap; cursor:pointer; transition:.15s ease;
+  }
+  .tab .dot{width:9px; height:9px; border-radius:50%; flex:none;}
+  .tab.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .tab.active .dot{outline:2px solid rgba(255,255,255,.6);}
+
+  /* ---------- Category section ---------- */
+  main{padding:4px 16px 10px;}
+  .cat-heading{
+    display:flex; align-items:center; gap:9px;
+    margin:22px 2px 12px;
+  }
+  .cat-heading:first-child{margin-top:6px;}
+  .cat-heading .dot{width:12px; height:12px; border-radius:50%; flex:none;}
+  .cat-heading h2{
+    font-size:18px; margin:0; letter-spacing:.01em;
+  }
+  .cat-heading .count{
+    margin-left:auto; font-size:12px; color:var(--ink-soft); font-weight:500;
+  }
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 15px 13px;
+    margin-bottom:10px;
+    box-shadow:0 1px 3px rgba(20,30,40,.03);
+  }
+  .card-top{display:flex; gap:10px; align-items:baseline;}
+  .card-num{
+    flex:none; font-size:12px; font-weight:700; color:#fff;
+    background:var(--navy); width:22px; height:22px; border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .card-titles{flex:1; min-width:0;}
+  .name-pt{font-size:16px; font-weight:700; margin:0; line-height:1.3;}
+  .name-en{font-size:13px; font-style:italic; color:var(--ink-soft); margin:1px 0 0;}
+  .badges{display:flex; gap:5px; flex:none;}
+  .badge-icon{
+    width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:11px;
+  }
+  .badge-veg{background:var(--veg-bg); color:var(--veg);}
+  .badge-sg{background:var(--sg-bg); color:var(--sg);}
+
+  .desc{margin:10px 0 0; padding-left:32px;}
+  .desc p{margin:0 0 3px; font-size:13.5px; line-height:1.5; color:var(--ink);}
+  .desc p.en{color:var(--ink-soft);}
+  .desc .lang-tag{font-weight:700; font-size:10.5px; color:var(--ink-soft); margin-right:5px;}
+
+  .allergen-row{
+    display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0; padding-left:32px;
+  }
+  .chip{
+    font-size:11px; font-weight:600; padding:3px 9px; border-radius:999px;
+    border:1px solid transparent;
+  }
+  .chip-none{background:var(--veg-bg); color:var(--veg);}
+
+  .no-results{
+    text-align:center; padding:40px 20px; color:var(--ink-soft); font-size:14px;
+  }
+
+  /* ---------- Legend ---------- */
+  .legend-box{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    margin:22px 2px 6px; padding:14px 15px;
+  }
+  .legend-box summary{
+    cursor:pointer; font-weight:700; font-size:14px; list-style:none; display:flex; align-items:center; gap:8px;
+  }
+  .legend-box summary::-webkit-details-marker{display:none;}
+  .legend-box summary::after{content:"+"; margin-left:auto; font-size:18px; color:var(--ink-soft);}
+  .legend-box[open] summary::after{content:"–";}
+  .legend-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:8px 12px; margin-top:12px;
+  }
+  .legend-item{display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-soft);}
+  .legend-item .swatch{width:12px; height:12px; border-radius:4px; flex:none;}
+
+  footer{
+    padding:18px 22px 30px; text-align:center;
+  }
+  footer p{font-size:12px; color:var(--ink-soft); line-height:1.6; margin:0 0 4px;}
+  footer .ship-mini{margin:14px auto 8px; width:30px; height:30px; opacity:.55;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-row">
+    <svg class="ship-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="#0E2A47" stroke="#C9A24B" stroke-width="2"/>
+      <path d="M20 66 Q50 78 80 66 L74 76 Q50 84 26 76 Z" fill="#C9A24B"/>
+      <rect x="48" y="24" width="3" height="32" fill="#EFE4C6"/>
+      <path d="M51 26 L72 52 L51 52 Z" fill="#E7D3A0"/>
+      <path d="M48 30 L32 52 L48 52 Z" fill="#F4EBD3"/>
+      <rect x="30" y="56" width="40" height="10" rx="2" fill="#EFE4C6"/>
+    </svg>
+    <div class="brand-text">
+      <p class="event-label">Congresso Internacional</p>
+      <p class="event-title">Porto 2026 · Testemunhas de Jeová</p>
+    </div>
+  </div>
+  <h1 class="menu-title display">Ementa</h1>
+  <p class="menu-sub">Salão do Reino Darque · 9 de Julho de 2026</p>
+</header>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="search" type="text" placeholder="Procurar prato ou alergénio / Search dish or allergen">
+  </div>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab active" data-cat="all"><span class="dot" style="background:conic-gradient(var(--veg),var(--sg),var(--outro),var(--fruit))"></span>Todos · All</div>
+  <div class="tab" data-cat="veg"><span class="dot" style="background:var(--veg)"></span>Vegetarianos</div>
+  <div class="tab" data-cat="sg"><span class="dot" style="background:var(--sg)"></span>Sem Glúten</div>
+  <div class="tab" data-cat="outro"><span class="dot" style="background:var(--outro)"></span>Carne &amp; Peixe</div>
+  <div class="tab" data-cat="fruit"><span class="dot" style="background:var(--fruit)"></span>Frutas &amp; Sobremesas</div>
+</div>
+
+<main id="main"></main>
+
+<div style="padding:0 16px;">
+  <details class="legend-box">
+    <summary>Legenda de Alergénios · Allergen Legend</summary>
+    <div class="legend-grid" id="legend"></div>
+  </details>
+</div>
+
+<footer>
+  <svg class="ship-mini" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="48" fill="none" stroke="#16375E" stroke-width="2"/>
+    <path d="M20 66 Q50 78 80 66 L74 76 Q50 84 26 76 Z" fill="#16375E"/>
+    <rect x="48" y="24" width="3" height="32" fill="#16375E"/>
+    <path d="M51 26 L72 52 L51 52 Z" fill="#16375E"/>
+    <path d="M48 30 L32 52 L48 52 Z" fill="#16375E"/>
+  </svg>
+  <p>Em caso de alergias ou dúvidas sobre ingredientes, por favor contacte a equipa de serviço.</p>
+  <p>If you have allergies or questions about ingredients, please ask the serving team.</p>
+</footer>
+
+<script>
+const ALLERGEN_COLORS = {
+  "Glúten":      {bg:"#FBEFDC", fg:"#A87418"},
+  "Gluten":      {bg:"#FBEFDC", fg:"#A87418"},
+  "Ovos":        {bg:"#FDF3D0", fg:"#8A7415"},
+  "Egg":         {bg:"#FDF3D0", fg:"#8A7415"},
+  "Lacticínios": {bg:"#E3EEF7", fg:"#2E6591"},
+  "Milk":        {bg:"#E3EEF7", fg:"#2E6591"},
+  "Peixe":       {bg:"#DEF0EE", fg:"#1F7A6E"},
+  "Fish":        {bg:"#DEF0EE", fg:"#1F7A6E"},
+  "Crustáceos":  {bg:"#FBE4D6", fg:"#B0521E"},
+  "Crustaceans": {bg:"#FBE4D6", fg:"#B0521E"},
+  "Sésamo":      {bg:"#EFE3D3", fg:"#7A5A2A"},
+  "Sesame":      {bg:"#EFE3D3", fg:"#7A5A2A"},
+  "Tremoço":     {bg:"#E9EFD6", fg:"#63741F"},
+  "Lupin":       {bg:"#E9EFD6", fg:"#63741F"},
+  "Sulfitos":    {bg:"#EDE1F2", fg:"#7A3E93"},
+  "Sulphites":   {bg:"#EDE1F2", fg:"#7A3E93"},
+  "Frutos de casca rija": {bg:"#F3E2DE", fg:"#96402B"},
+  "Tree nuts":   {bg:"#F3E2DE", fg:"#96402B"}
+};
+
+function allergenChips(pt, en){
+  if(pt === "Nenhum"){
+    return '<span class="chip chip-none">Nenhum alergénio · No allergens</span>';
+  }
+  const ptList = pt.split(" · ");
+  const enList = en.split(" · ");
+  return ptList.map((p,i)=>{
+    const e = enList[i] || "";
+    const c = ALLERGEN_COLORS[p] || {bg:"#EEE", fg:"#555"};
+    return `<span class="chip" style="background:${c.bg};color:${c.fg}">${p} · ${e}</span>`;
+  }).join("");
+}
+
+const DATA = {
+veg: [
+["1","Mini Empadas (legumes)","Vegetable mini pies",
+ "Massa de trigo, legumes variados (alho francês, pimento, couve coração, cenoura), especiarias.",
+ "Wheat dough, mixed vegetables (leek, pepper, spring greens, carrot), spices.","Glúten","Gluten",false,false],
+["2","Mini Chamuças (legumes)","Vegetable samosas",
+ "Massa de chamuça, batata, legumes variados (alho francês, pimento, couve coração, cenoura, ervilhas), especiarias.",
+ "Samosa pastry, potato, mixed vegetables (leek, pepper, spring greens, carrot, peas), spices.","Glúten","Gluten",false,false],
+["3","Mini Tostas (pasta de azeitona, hummus)","Mini toasts (olive paste, hummus)",
+ "Tostas de trigo, polpa de azeitona verde e preta, grão-de-bico cozido, tahini, xarope de agave, azeite, alho, sumo de limão, orégãos.",
+ "Wheat toasts, green/black olive pulp, cooked chickpeas, tahini, agave syrup, olive oil, garlic, lemon juice, oregano.","Glúten · Sésamo","Gluten · Sesame",false,false],
+["4","Tábua de Queijos Variados","Assorted cheese board",
+ "Variedade de queijos curados e/ou amanteigados (leite).",
+ "Assorted cured and soft cheeses (milk).","Lacticínios","Milk",false,false],
+["5","Azeitonas","Olives",
+ "Azeitonas inteiras em salmoura.","Whole olives in brine.","Nenhum","None",true,true],
+["6","Tremoços","Lupin beans",
+ "Tremoços em salmoura.","Lupin beans in brine.","Tremoço","Lupin",false,false],
+["7","Pão (variedades com glúten)","Bread (gluten varieties)",
+ "Farinha de trigo, água, fermento, sal. Poderão existir diversas variedades.",
+ "Wheat flour, water, yeast, salt. Various traditional bread types may be available.","Glúten","Gluten",false,false],
+["8","Broa","Corn bread",
+ "Farinha de milho, farinha de centeio, água, fermento, sal.",
+ "Corn flour, rye flour, water, yeast, salt.","Glúten","Gluten",false,false],
+["9","Caldo Verde","Traditional kale soup",
+ "Batata, couve galega cortada fina, azeite, alho, sal.",
+ "Potato, thinly shredded kale, olive oil, garlic, salt.","Nenhum","None",true,true],
+["10","Salada de Tomate Simples","Simple tomato salad",
+ "Tomate fresco, azeite, vinagre, orégãos, sal.",
+ "Fresh tomato, olive oil, vinegar, oregano, salt.","Sulfitos","Sulphites",false,false],
+["11","Pepino Temperado","Seasoned cucumber",
+ "Pepino, azeite, vinagre, sal, orégãos.","Cucumber, olive oil, vinegar, salt, oregano.","Sulfitos","Sulphites",false,false],
+["12","Pão (Versão Sem Glúten)","Gluten-free bread",
+ "Farinhas isentas de glúten (arroz, amido de milho, batata), água, levedura.",
+ "Gluten-free flours (rice, corn starch, potato), water, yeast.","Nenhum","None",true,true],
+["13","Alface Temperada","Seasoned lettuce",
+ "Alface, azeite, vinagre, sal, orégãos.","Lettuce, olive oil, vinegar, salt, oregano.","Sulfitos","Sulphites",false,false]
+],
+sg: [
+["1","Caldo Verde","Traditional kale soup",
+ "Batata, couve galega cortada fina, azeite, alho, sal.",
+ "Potato, thinly shredded kale, olive oil, garlic, salt.","Nenhum","None",true,true],
+["2","Mini Pataniscas de Bacalhau / Legumes (SG)","GF codfish / vegetable pataniscas",
+ "Farinha sem glúten (trigo/aveia certificados), bacalhau ou legumes variados (feijão-verde, cenoura, cebola, alho francês), ovo, salsa.",
+ "Gluten-free flour (certified wheat/oats), salt cod or mixed vegetables (green beans, carrot, onion, leek), egg, parsley.","Ovos · Peixe","Egg · Fish",false,true],
+["3","Salada de Feijão Frade com Atum","Black-eyed pea & tuna salad",
+ "Feijão frade, atum, cebola, salsa, azeite, vinagre, ovo, especiarias (sem maionese).",
+ "Black-eyed beans, tuna, onion, parsley, olive oil, vinegar, egg, spices (no mayonnaise).","Peixe · Ovos","Fish · Egg",false,true],
+["4","Salada de Tomate Simples","Simple tomato salad",
+ "Tomate fresco, azeite, vinagre, orégãos, sal.","Fresh tomato, olive oil, vinegar, oregano, salt.","Sulfitos","Sulphites",true,true],
+["5","Pepino Temperado","Seasoned cucumber",
+ "Pepino, azeite, vinagre, sal, orégãos.","Cucumber, olive oil, vinegar, salt, oregano.","Sulfitos","Sulphites",true,true],
+["6","Pão (Versão Sem Glúten)","Gluten-free bread",
+ "Farinhas isentas de glúten (arroz, amido de milho, batata), água, levedura.",
+ "Gluten-free flours (rice, corn starch, potato), water, yeast.","Nenhum","None",true,true],
+["7","Alface Temperada","Seasoned lettuce",
+ "Alface, azeite, vinagre, sal, orégãos.","Lettuce, olive oil, vinegar, salt, oregano.","Sulfitos","Sulphites",true,true],
+["8","Pão de Ló (Sem Glúten)","Gluten-free sponge cake",
+ "Ovos, açúcar, farinha de arroz, amido de milho.","Eggs, sugar, rice flour, corn starch.","Ovos","Egg",true,true]
+],
+outro: [
+["1","Mini Croquetes de Carne","Meat croquettes",
+ "Carne picada, chouriço, cebola, cenoura, farinha, pão ralado, clara de ovo, especiarias.",
+ "Minced meat, chorizo, onion, carrot, flour, breadcrumbs, egg white, spices.","Glúten · Ovos","Gluten · Egg",false,false],
+["2","Mini Rissóis de Carne","Meat pastries",
+ "Farinha, carne, chouriço, cebola, cenoura, pão ralado, clara de ovo, alho, sal, especiarias (sem camarão).",
+ "Flour, meat, chorizo, onion, carrot, breadcrumbs, egg white, garlic, salt, spices (no shrimp).","Glúten","Gluten",false,false],
+["3","Mini Bolinhos de Bacalhau","Codfish cakes",
+ "Bacalhau, batata, ovos, salsa, cebola, azeite.","Codfish, potato, eggs, parsley, onion, olive oil.","Ovos · Peixe","Egg · Fish",false,false],
+["4","Mini Panados (frango, peru)","Chicken & turkey schnitzels",
+ "Peito de frango/peru, farinha, ovo, pão ralado, limão, pimenta, sal.",
+ "Chicken/turkey breast, flour, egg, breadcrumbs, lemon, pepper, salt.","Glúten · Ovos","Gluten · Egg",false,false],
+["5","Frango de Churrasco","BBQ chicken",
+ "Frango, alho, louro, azeite, sal, piripiri.","Chicken, garlic, bay leaf, olive oil, salt, piri-piri.","Nenhum","None",false,true],
+["6","Rojões","Pork cubes",
+ "Carne de porco, alho, louro, banha, sal, especiarias.","Pork, garlic, bay leaf, lard, salt, spices.","Nenhum","None",false,true],
+["7","Feijoada à Transmontana","Traditional bean stew",
+ "Feijão, carnes de porco variadas, couve, cenoura, enchidos.","Beans, assorted pork meats, cabbage, carrot, sausages.","Nenhum","None",false,true],
+["8","Bifanas no Pão","Pork bifanas in bread",
+ "Carne de porco, pão de trigo, alho, louro, vinho, cerveja, especiarias.",
+ "Pork, wheat bread, garlic, bay leaf, wine, beer, spices.","Glúten","Gluten",false,false],
+["9","Moelas","Chicken gizzards",
+ "Moelas de frango, cebola, alho, tomate, vinho, azeite, piripiri.",
+ "Chicken gizzards, onion, garlic, tomato, wine, olive oil, piri-piri.","Nenhum","None",false,true],
+["10","Mini Filetes de Pescada","Fish fillets",
+ "Filetes de pescada, farinha de arroz, farinha de milho, amido, leite, ovo, limão, sal.",
+ "Hake fillets, rice flour, maize flour, starch, milk, egg, lemon, salt.","Glúten · Crustáceos · Ovos · Peixe","Gluten · Crustaceans · Egg · Fish",false,false],
+["11","Orelheira de Porco Cozida com Molho Verde","Pig ear with green sauce",
+ "Orelha de porco, cebola, salsa, azeite, vinagre, sal.","Pig ear, onion, parsley, olive oil, vinegar, salt.","Nenhum","None",false,true],
+["12","Paio Fatiado","Sliced paio sausage",
+ "Carne de porco encasada, condimentos.","Cured pork sausage, seasonings.","Nenhum","None",false,true],
+["13","Presunto Fatiado","Sliced cured ham",
+ "Perna de porco curada, sal.","Cured pork leg, salt.","Nenhum","None",false,true],
+["14","Chouriço Fatiado","Sliced chorizo",
+ "Carne de porco, gordura, alho, colorau, sal.","Pork meat, fat, garlic, paprika, salt.","Nenhum","None",false,true]
+],
+fruit: [
+["1","Espetadas de Fruta Variada","Fruit skewers",
+ "Morangos, uvas, melancia, melão, cerejas, abacaxi.","Strawberries, grapes, watermelon, melon, cherries, pineapple.","Nenhum","None",true,true],
+["2","Morangos","Strawberries",
+ "Morangos frescos.","Fresh strawberries.","Nenhum","None",true,true],
+["3","Uvas","Grapes",
+ "Uvas frescas.","Fresh grapes.","Nenhum","None",true,true],
+["4","Melancia","Watermelon",
+ "Melancia fresca.","Fresh watermelon.","Nenhum","None",true,true],
+["5","Melão","Melon",
+ "Melão fresco.","Fresh melon.","Nenhum","None",true,true],
+["6","Cerejas","Cherries",
+ "Cerejas frescas.","Fresh cherries.","Nenhum","None",true,true],
+["7","Abacaxi","Pineapple",
+ "Abacaxi fresco.","Fresh pineapple.","Nenhum","None",true,true],
+["8","Pastel de Nata","Custard tart",
+ "Massa folhada (farinha de trigo), leite, ovos, açúcar, canela.",
+ "Puff pastry, milk, eggs, sugar, cinnamon.","Glúten · Ovos · Lacticínios","Gluten · Egg · Milk",true,false],
+["9","Pão de Ló","Sponge cake",
+ "Ovos, açúcar, farinha de trigo.","Eggs, sugar, wheat flour.","Glúten · Ovos","Gluten · Egg",true,false],
+["10","Bolos / Doces Regionais","Regional cakes & sweets",
+ "Ingredientes variados consoante a região.","Varied ingredients depending on region.",
+ "Glúten · Ovos · Lacticínios · Frutos de casca rija","Gluten · Egg · Milk · Tree nuts",true,false],
+["11","Marmelada","Quince jam",
+ "Marmelo, açúcar.","Quince, sugar.","Nenhum","None",true,true],
+["12","Compotas","Sweet preserves",
+ "Frutas variadas, açúcar.","Assorted fruits, sugar.","Nenhum","None",true,true]
+]
+};
+
+const CAT_META = {
+  veg:   {title:"Pratos Vegetarianos · Vegetarian Dishes", color:"var(--veg)"},
+  sg:    {title:"Pratos Sem Glúten · Gluten-Free Dishes", color:"var(--sg)"},
+  outro: {title:"Outros Pratos (Carne & Peixe) · Other Dishes", color:"var(--outro)"},
+  fruit: {title:"Frutas & Sobremesas · Fruits & Desserts", color:"var(--fruit)"}
+};
+
+function renderCategory(catKey){
+  const meta = CAT_META[catKey];
+  const items = DATA[catKey];
+  let html = `<div class="cat-heading"><span class="dot" style="background:${meta.color}"></span>
+    <h2>${meta.title}</h2><span class="count">${items.length}</span></div>`;
+  items.forEach(d=>{
+    const [num, pt, en, descPt, descEn, allPt, allEn, isVeg, isSg] = d;
+    let badges = "";
+    if(isVeg) badges += `<span class="badge-icon badge-veg" title="Vegetariano">V</span>`;
+    if(isSg) badges += `<span class="badge-icon badge-sg" title="Sem Glúten">SG</span>`;
+    html += `<div class="card" data-search="${(pt+" "+en+" "+allPt+" "+allEn).toLowerCase()}">
+      <div class="card-top">
+        <span class="card-num">${num}</span>
+        <div class="card-titles">
+          <p class="name-pt">${pt}</p>
+          <p class="name-en">${en}</p>
+        </div>
+        <div class="badges">${badges}</div>
+      </div>
+      <div class="desc">
+        <p><span class="lang-tag">PT</span>${descPt}</p>
+        <p class="en"><span class="lang-tag">EN</span>${descEn}</p>
+      </div>
+      <div class="allergen-row">${allergenChips(allPt, allEn)}</div>
+    </div>`;
+  });
+  return html;
+}
+
+const main = document.getElementById("main");
+let currentCat = "all";
+
+function draw(){
+  if(currentCat === "all"){
+    main.innerHTML = Object.keys(CAT_META).map(k=>renderCategory(k)).join("");
+  } else {
+    main.innerHTML = renderCategory(currentCat);
+  }
+  applySearch();
+}
+
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    currentCat = tab.dataset.cat;
+    draw();
+  });
+});
+
+function applySearch(){
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const cards = main.querySelectorAll(".card");
+  let visible = 0;
+  cards.forEach(c=>{
+    const match = !q || c.dataset.search.includes(q);
+    c.style.display = match ? "" : "none";
+    if(match) visible++;
+  });
+  const existingMsg = main.querySelector(".no-results");
+  if(existingMsg) existingMsg.remove();
+  if(visible === 0 && q){
+    const div = document.createElement("div");
+    div.className = "no-results";
+    div.textContent = "Sem resultados · No results";
+    main.appendChild(div);
+  }
+}
+document.getElementById("search").addEventListener("input", applySearch);
+
+// Legend
+const legend = document.getElementById("legend");
+const legendEntries = [
+  ["Glúten · Gluten", ALLERGEN_COLORS["Glúten"]],
+  ["Ovos · Egg", ALLERGEN_COLORS["Ovos"]],
+  ["Lacticínios · Milk", ALLERGEN_COLORS["Lacticínios"]],
+  ["Peixe · Fish", ALLERGEN_COLORS["Peixe"]],
+  ["Crustáceos · Crustaceans", ALLERGEN_COLORS["Crustáceos"]],
+  ["Sésamo · Sesame", ALLERGEN_COLORS["Sésamo"]],
+  ["Tremoço · Lupin", ALLERGEN_COLORS["Tremoço"]],
+  ["Sulfitos · Sulphites", ALLERGEN_COLORS["Sulfitos"]],
+  ["Frutos de casca rija · Tree nuts", ALLERGEN_COLORS["Frutos de casca rija"]]
+];
+legend.innerHTML = legendEntries.map(([label,c])=>
+  `<div class="legend-item"><span class="swatch" style="background:${c.bg};border:1px solid ${c.fg}22"></span>${label}</div>`
+).join("") + `<div class="legend-item"><span class="swatch" style="background:var(--veg-bg);border:1px solid var(--veg)"></span>V · Vegetariano</div>
+<div class="legend-item"><span class="swatch" style="background:var(--sg-bg);border:1px solid var(--sg)"></span>SG · Sem Glúten</div>`;
+
+draw();
+</script>
+</body>
+</html>
