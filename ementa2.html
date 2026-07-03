@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ementa - Congresso Internacional Porto 2026</title>
+    <style>
+        :root {
+            /* Cores Padrão Institucionais */
+            --jw-blue-dark: #1b365d;   
+            --jw-blue-light: #4a779d;  
+            --jw-gold: #b38f4f;        
+            --bg-color: #f7f9fc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            
+            /* Cores das Categorias e Alergénios */
+            --allergen-bg: #fff5f5;
+            --allergen-text: #c53030;
+            --veg-bg: #f0fff4;
+            --veg-text: #2f855a;
+            --gf-bg: #fefcbf;
+            --gf-text: #b7791f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* HEADER INSTITUCIONAL */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: #ffffff;
+            border-top: 8px solid var(--jw-blue-dark);
+            border-bottom: 4px solid var(--jw-gold);
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .event-logo {
+            max-width: 280px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .meta-info {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            color: var(--jw-blue-light);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--jw-blue-dark);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        header h3 {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 1.15em;
+        }
+
+        /* SECÇÃO DE FILTROS */
+        .filter-section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+            border: 1px solid #edf2f7;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            font-weight: 700;
+            color: var(--jw-blue-dark);
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .btn-filter {
+            background: #edf2f7;
+            border: none;
+            color: var(--text-main);
+            padding: 8px 16px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+        }
+
+        .btn-filter:hover {
+            background: #e2e8f0;
+        }
+
+        .btn-filter.active {
+            background: var(--jw-blue-dark);
+            color: #ffffff;
+        }
+
+        .checkbox-filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            margin-right: 6px;
+            accent-color: var(--jw-blue-dark);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* GRID & CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .dish-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #edf2f7;
+        }
+
+        .dish-card.hidden {
+            display: none !important;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(27, 54, 93, 0.06);
+            border-color: #cbd5e0;
+        }
+
+        .dish-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .dish-number {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--jw-blue-dark);
+            background: #edf2f7;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .badges-header-container {
+            display: flex;
+            gap: 4px;
+        }
+
+        .type-badge {
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .type-badge.v { background: var(--veg-bg); color: var(--veg-text); }
+        .type-badge.g { background: var(--gf-bg); color: var(--gf-text); }
+        .type-badge.m { background: #edf2f7; color: var(--jw-blue-dark); }
+        .type-badge.d { background: #e2e8f0; color: var(--text-main); }
+
+        .dish-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--jw-blue-dark);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .dish-body {
+            flex-grow: 1;
+        }
+
+        .lang-pt {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .lang-en {
+            font-size: 0.9em;
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 2px solid var(--jw-blue-light);
+            padding-left: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* BADGES */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .badge {
+            font-size: 0.75em;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-allergen {
+            background-color: var(--allergen-bg);
+            color: var(--allergen-text);
+        }
+
+        .badge-neutral {
+            background-color: #edf2f7;
+            color: var(--text-muted);
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-weight: 600;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e0;
+            display: none;
+        }
+
+        .info-notice {
+            background: #ffffff;
+            border-left: 4px solid var(--jw-gold);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+
+        .info-notice p {
+            font-size: 1.05em;
+            font-weight: 600;
+            color: var(--jw-blue-dark);
+        }
+
+        .info-notice p.en {
+            font-style: italic;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.85em;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.9em; }
+            body { padding: 20px 10px; }
+            header { padding: 30px 15px; }
+            .event-logo { max-width: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo-container">
+            <img src="logo-congresso-2026.png" alt="Logótipo do Congresso Internacional" class="event-logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='block';">
+            <div id="logo-placeholder" style="display:none; font-weight:700; color:var(--jw-blue-dark); border:2px dashed var(--jw-gold); padding:15px; max-width:300px; margin:0 auto; border-radius:6px; font-size:0.9em; text-transform:uppercase; letter-spacing:1px;">
+                [ Espaço para o Logo Oficial ]<br><span style="font-size:0.8em; font-weight:400; color:var(--text-muted);">Substituir por logo-congresso-2026.png</span>
+            </div>
+        </div>
+        <div class="meta-info">Porto &bull; 2026</div>
+        <h1>EMENTA</h1>
+        <h3>Salão do Reino Darque &bull; 9 de Julho de 2026</h3>
+    </header>
+
+    <!-- ÁREA DE FILTROS -->
+    <div class="filter-section">
+        <div class="filter-group">
+            <span class="filter-label">Tipo de Prato / Dish Type</span>
+            <div id="type-filters">
+                <button class="btn-filter active" data-type="all">Todos / All</button>
+                <button class="btn-filter" data-type="veg">Vegetariano / Vegetarian</button>
+                <button class="btn-filter" data-type="gf">Sem Glúten / Gluten-Free</button>
+                <button class="btn-filter" data-type="meat-fish">Carne e Peixe / Meat & Fish</button>
+                <button class="btn-filter" data-type="dessert">Frutas e Sobremesas / Desserts</button>
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <span class="filter-label">Restrições Alimentares (Ocultar pratos com)</span>
+            <div class="checkbox-filter-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" value="gluten" class="allergen-checkbox"> Ocultar pratos com Glúten
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" value="laticinios" class="allergen-checkbox"> Ocultar pratos com Laticínios
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" value="ovos" class="allergen-checkbox"> Ocultar pratos com Ovos
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARDS DA EMENTA -->
+    <div class="grid" id="menu-grid">
+        <div class="no-results" id="no-results-msg">Nenhum prato corresponde aos filtros selecionados.</div>
+
+        <!-- ENTRADAS / VEGETARIANOS -->
+        <div class="dish-card" data-dish-type="veg" data-allergens="gluten">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#01</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
+                </div>
+                <div class="dish-title">Mini Empadas (legumes) / Vegetable mini pies</div>
+                <p class="lang-pt">Massa de trigo, legumes variados (alho francês, pimento, couve coração, cenoura), especiarias.</p>
+                <p class="lang-en">Wheat dough, mixed vegetables (leek, pepper, spring greens, carrot), spices.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg" data-allergens="gluten">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#02</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
+                </div>
+                <div class="dish-title">Mini Chamuças (legumes) / Vegetable samosas</div>
+                <p class="lang-pt">Massa de chamuça, batata, legumes variados, especiarias.</p>
+                <p class="lang-en">Samosa pastry, potato, mixed vegetables, spices.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg" data-allergens="gluten sésamo">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#03</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
+                </div>
+                <div class="dish-title">Mini Tostas / Mini toasts</div>
+                <p class="lang-pt">Tostas de trigo, polpa de azeitona, grão-de-bico, tahini, azeite, alho.</p>
+                <p class="lang-en">Wheat toasts, olive pulp, chickpeas, tahini, olive oil, garlic.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+                <span class="badge badge-allergen">Sésamo</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg" data-allergens="laticinios">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#04</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
+                </div>
+                <div class="dish-title">Tábua de Queijos Variados / Assorted cheese board</div>
+                <p class="lang-pt">Variedade de queijos curados e/ou amanteigados (leite).</p>
+                <p class="lang-en">Assorted cured and soft cheeses (milk).</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Lacticínios</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg gf" data-allergens="">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#05</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Azeitonas / Olives</div>
+                <p class="lang-pt">Azeitonas inteiras em salmoura.</p>
+                <p class="lang-en">Whole olives in brine.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-neutral">Sem Alergénios</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg gf" data-allergens="tremoço">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#06</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Tremoços / Lupin beans</div>
+                <p class="lang-pt">Tremoços em salmoura.</p>
+                <p class="lang-en">Lupin beans in brine.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Tremoço</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg" data-allergens="gluten">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#07</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span></div>
+                </div>
+                <div class="dish-title">Pão (com glúten) / Bread</div>
+                <p class="lang-pt">Farinha de trigo, água, fermento, sal.</p>
+                <p class="lang-en">Wheat flour, water, yeast, salt.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg gf" data-allergens="">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#08</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Caldo Verde / Traditional kale soup</div>
+                <p class="lang-pt">Batata, couve galega cortada fina, azeite, alho, sal.</p>
+                <p class="lang-en">Potato, thinly shredded kale, olive oil, garlic, salt.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-neutral">Sem Alergénios</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="veg gf" data-allergens="">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#09</span>
+                    <div class="badges-header-container"><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Pão (Sem Glúten) / Gluten-free bread</div>
+                <p class="lang-pt">Farinhas isentas de glúten (arroz, amido de milho, batata), água, levedura.</p>
+                <p class="lang-en">Gluten-free flours (rice, corn starch, potato), water, yeast.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-neutral">Sem Alergénios</span>
+            </div>
+        </div>
+
+        <!-- PRATOS ISENTOS DE GLÚTEN COMPARTILHADOS -->
+        <div class="dish-card" data-dish-type="gf" data-allergens="ovos peixe">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#10</span>
+                    <div class="badges-header-container"><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Mini Pataniscas (SG) / GF Pataniscas</div>
+                <p class="lang-pt">Farinha sem glúten, bacalhau ou legumes, ovo, salsa.</p>
+                <p class="lang-en">Gluten-free flour, salt cod or vegetables, egg, parsley.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Ovos</span>
+                <span class="badge badge-allergen">Peixe</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="gf" data-allergens="peixe ovos">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#11</span>
+                    <div class="badges-header-container"><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Salada de Feijão Frade / Tuna salad</div>
+                <p class="lang-pt">Feijão frade, atum, cebola, salsa, azeite, vinagre, ovo.</p>
+                <p class="lang-en">Black-eyed beans, tuna, onion, parsley, olive oil, vinegar, egg.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Peixe</span>
+                <span class="badge badge-allergen">Ovos</span>
+            </div>
+        </div>
+
+        <!-- CARNE E PEIXE -->
+        <div class="dish-card" data-dish-type="meat-fish" data-allergens="gluten ovos">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#12</span>
+                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span></div>
+                </div>
+                <div class="dish-title">Mini Croquetes de Carne / Meat croquettes</div>
+                <p class="lang-pt">Carne picada, chouriço, cebola, farinha, pão ralado, clara de ovo.</p>
+                <p class="lang-en">Minced meat, chorizo, onion, flour, breadcrumbs, egg white.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+                <span class="badge badge-allergen">Ovos</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="meat-fish" data-allergens="ovos peixe">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#13</span>
+                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span></div>
+                </div>
+                <div class="dish-title">Mini Bolinhos de Bacalhau / Codfish cakes</div>
+                <p class="lang-pt">Bacalhau, batata, ovos, salsa, cebola, azeite.</p>
+                <p class="lang-en">Codfish, potato, eggs, parsley, onion, olive oil.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Ovos</span>
+                <span class="badge badge-allergen">Peixe</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="meat-fish gf" data-allergens="">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#14</span>
+                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Frango de Churrasco / BBQ chicken</div>
+                <p class="lang-pt">Frango, alho, louro, azeite, sal, piripiri.</p>
+                <p class="lang-en">Chicken, garlic, bay leaf, olive oil, salt, piri-piri.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-neutral">Sem Alergénios</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="meat-fish" data-allergens="gluten">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#15</span>
+                    <div class="badges-header-container"><span class="type-badge m">Carne/Peixe</span></div>
+                </div>
+                <div class="dish-title">Bifanas no Pão / Pork bifanas in bread</div>
+                <p class="lang-pt">Carne de porco, pão de trigo, alho, louro, vinho, cerveja.</p>
+                <p class="lang-en">Pork, wheat bread, garlic, bay leaf, wine, beer.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+            </div>
+        </div>
+
+        <!-- SOBREMESAS -->
+        <div class="dish-card" data-dish-type="dessert veg gf" data-allergens="">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#16</span>
+                    <div class="badges-header-container"><span class="type-badge d">Doce</span><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Espetadas de Fruta Variada / Fruit skewers</div>
+                <p class="lang-pt">Morangos, uvas, melancia, melão, cerejas, abacaxi.</p>
+                <p class="lang-en">Strawberries, grapes, watermelon, melon, cherries, pineapple.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-neutral">Sem Alergénios</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="dessert veg" data-allergens="gluten ovos laticinios">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#17</span>
+                    <div class="badges-header-container"><span class="type-badge d">Doce</span><span class="type-badge v">Veg</span></div>
+                </div>
+                <div class="dish-title">Pastel de Nata / Custard tart</div>
+                <p class="lang-pt">Massa folhada, leite, ovos, açúcar, canela.</p>
+                <p class="lang-en">Puff pastry, milk, eggs, sugar, cinnamon.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Glúten</span>
+                <span class="badge badge-allergen">Ovos</span>
+                <span class="badge badge-allergen">Lacticínios</span>
+            </div>
+        </div>
+
+        <div class="dish-card" data-dish-type="dessert veg gf" data-allergens="ovos">
+            <div class="dish-body">
+                <div class="dish-header">
+                    <span class="dish-number">#18</span>
+                    <div class="badges-header-container"><span class="type-badge d">Doce</span><span class="type-badge v">Veg</span><span class="type-badge g">SG</span></div>
+                </div>
+                <div class="dish-title">Pão de Ló (Sem Glúten) / GF Sponge cake</div>
+                <p class="lang-pt">Ovos, açúcar, farinha de arroz, amido de milho.</p>
+                <p class="lang-en">Eggs, sugar, rice flour, corn starch.</p>
+            </div>
+            <div class="tags-container">
+                <span class="badge badge-allergen">Ovos</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-notice">
+        <p>Em caso de alergias ou dúvidas sobre ingredientes, por favor contacte a equipa de serviço.</p>
+        <p class="en">If you have allergies or questions about ingredients, please ask the serving team.</p>
+    </div>
+
+    <footer>
+        Porto &bull; 2026 &bull; Sistema de Consulta Digital
+    </footer>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const typeButtons = document.querySelectorAll('#type-filters .btn-filter');
+        const checkboxes = document.querySelectorAll('.allergen-checkbox');
+        const cards = document.querySelectorAll('.dish-card');
+        const noResultsMsg = document.getElementById('no-results-msg');
+
+        let currentType = 'all';
+
+        typeButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                typeButtons.forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                currentType = e.target.getAttribute('data-type');
+                filterMenu();
+            });
+        });
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterMenu);
+        });
+
+        function filterMenu() {
+            const excludedAllergens = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const dishTypes = card.getAttribute('data-dish-type').split(' ');
+                const dishAllergens = card.getAttribute('data-allergens').split(' ');
+
+                const matchesType = (currentType === 'all' || dishTypes.includes(currentType));
+                const hasExcludedAllergen = excludedAllergens.some(allergen => dishAllergens.includes(allergen));
+
+                if (matchesType && !hasExcludedAllergen) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            noResultsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
