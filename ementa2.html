@@ -99,7 +99,7 @@
 </div>
 <div class="w-full relative mt-4 mb-6">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full bg-surface-white/10 border border-outline-variant/30 text-on-primary placeholder-on-primary/50 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed transition-all" placeholder="Procurar pratos ou alergénios / Search dish or allergen" type="text"/>
+<input class="w-full bg-surface-white/10 border border-outline-variant/30 text-on-primary placeholder-on-primary/50 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed transition-all" id="searchInput" placeholder="Procurar pratos ou alergénios / Search dish or allergen" type="text"/>
 </div>
 <nav class="flex overflow-x-auto hide-scrollbar gap-stack-md pb-2 mt-2 w-full">
 <a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps flex items-center gap-2 transition-colors" data-target="todos" href="#todos">
@@ -131,7 +131,7 @@
 <span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">13 Itens</span>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
@@ -148,7 +148,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
@@ -165,7 +165,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
@@ -183,7 +183,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Sésamo · Sesame</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
@@ -200,7 +200,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-dessert/10 text-category-dessert border border-category-dessert/20">Leite · Milk</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
@@ -217,7 +217,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
@@ -234,7 +234,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Tremoço · Lupin</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">7</div>
@@ -251,7 +251,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">8</div>
@@ -268,7 +268,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">9</div>
@@ -285,7 +285,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">10</div>
@@ -302,7 +302,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">11</div>
@@ -319,7 +319,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">12</div>
@@ -336,7 +336,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-veg opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">13</div>
@@ -363,7 +363,7 @@
 <span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">8 Itens</span>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
@@ -380,7 +380,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
@@ -398,7 +398,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
@@ -416,7 +416,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
@@ -433,7 +433,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
@@ -450,7 +450,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
@@ -467,7 +467,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">7</div>
@@ -484,7 +484,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed/30 text-tertiary border border-tertiary/20">Sulfitos · Sulphites</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-gluten opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">8</div>
@@ -511,7 +511,7 @@
 <span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">12 Itens</span>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
@@ -529,7 +529,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
@@ -546,7 +546,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
@@ -564,7 +564,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
@@ -582,7 +582,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
@@ -599,7 +599,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
@@ -616,7 +616,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">7</div>
@@ -633,7 +633,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">8</div>
@@ -650,7 +650,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-gluten/10 text-category-gluten border border-category-gluten/20">Glúten · Gluten</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">9</div>
@@ -667,7 +667,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">10</div>
@@ -687,7 +687,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Peixe · Fish</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">11</div>
@@ -704,7 +704,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-meat opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">12</div>
@@ -731,7 +731,7 @@
 <span class="ml-auto text-label-caps font-label-caps text-outline bg-surface-variant px-2 py-1 rounded-full">6 Itens</span>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">1</div>
@@ -748,7 +748,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">2</div>
@@ -765,7 +765,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant border border-outline-variant/50"><span class="material-symbols-outlined text-[14px]">eco</span>Nenhum alergénio · No allergens</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">3</div>
@@ -784,7 +784,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-dessert/10 text-category-dessert border border-category-dessert/20">Leite · Milk</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">4</div>
@@ -802,7 +802,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-category-meat/10 text-category-meat border border-category-meat/20">Ovos · Egg</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">5</div>
@@ -822,7 +822,7 @@
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Frutos Casca Rija · Tree nuts</span>
 </div>
 </div>
-<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden">
+<div class="bg-surface-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow group relative overflow-hidden dish-card">
 <div class="absolute top-0 left-0 w-1 h-full bg-category-dessert opacity-50"></div>
 <div class="flex items-start gap-4">
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-caps font-label-caps font-bold shrink-0 text-primary">6</div>
@@ -866,11 +866,47 @@
     document.addEventListener('DOMContentLoaded', () => {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const categorySections = document.querySelectorAll('.category-section');
+        const searchInput = document.getElementById('searchInput');
+
+        let activeCategory = 'todos';
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase();
+
+            categorySections.forEach(section => {
+                const isCategoryMatch = activeCategory === 'todos' || section.id === activeCategory;
+                let hasVisibleCards = false;
+
+                const cards = section.querySelectorAll('.dish-card');
+                cards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    const isSearchMatch = text.includes(query);
+
+                    if (isSearchMatch) {
+                        card.style.display = '';
+                        hasVisibleCards = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (isCategoryMatch && hasVisibleCards) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilters);
+        }
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = btn.getAttribute('data-target');
+                activeCategory = target;
 
                 // Update button active state
                 filterBtns.forEach(b => {
@@ -880,14 +916,7 @@
                 btn.classList.remove('border', 'border-outline-variant', 'text-on-primary', 'hover:bg-surface-white/10');
                 btn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed');
 
-                // Filter sections
-                categorySections.forEach(section => {
-                    if (target === 'todos' || section.id === target) {
-                        section.style.display = 'block';
-                    } else {
-                        section.style.display = 'none';
-                    }
-                });
+                applyFilters();
                 
                 // Optional: Smooth scroll to top of list when filtering
                 if(target !== 'todos') {
