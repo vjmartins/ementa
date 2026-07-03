@@ -86,7 +86,7 @@
                 }
             }
         }
-    }catch(_e){}</script></head><body class="bg-surface-bright text-on-surface font-body-lg min-h-screen pb-24 md:pb-0">
+    }catch(_e){}</script></head><body class="bg-surface-bright text-on-surface font-body-lg min-h-screen md:pb-0">
 <!-- TopAppBar -->
 <header class="bg-primary dark:bg-primary-container docked full-width top shadow-md">
 <div class="flex flex-col w-full px-6 py-4 md:px-12 max-w-full">
@@ -101,7 +101,7 @@
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
 <input class="w-full bg-surface-white/10 border border-outline-variant/30 text-on-primary placeholder-on-primary/50 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed transition-all" id="searchInput" placeholder="Procurar pratos ou alergénios / Search dish or allergen" type="text"/>
 </div>
-<nav class="flex overflow-x-auto hide-scrollbar gap-stack-md pb-2 mt-2 w-full">
+<nav class="flex overflow-x-auto hide-scrollbar gap-stack-md pb-2 mt-2 w-full whitespace-nowrap">
 <a class="filter-btn whitespace-nowrap px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps flex items-center gap-2 transition-colors" data-target="todos" href="#todos">
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
                     Todos
@@ -122,7 +122,7 @@
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="max-w-7xl mx-auto px-6 md:px-12 py-section-padding flex flex-col gap-section-padding">
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-section-padding flex flex-col gap-section-padding py-8">
 <!-- Category: Vegetarianos -->
 <section class="scroll-mt-32 category-section" id="vegetarianos">
 <div class="flex items-center gap-4 mb-stack-lg border-b border-outline-variant pb-2">
@@ -843,20 +843,6 @@
 </section>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 pb-safe md:hidden bg-surface-bright/80 backdrop-blur-md dark:bg-surface-dim/80 border-t border-outline-variant">
-<button class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed font-bold scale-95 duration-150 p-2">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Ementa</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-all rounded-lg p-2">
-<span class="material-symbols-outlined">search</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Pesquisar</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-all rounded-lg p-2">
-<span class="material-symbols-outlined">warning</span>
-<span class="text-label-caps font-label-caps mt-1 text-[10px]">Alergénios</span>
-</button>
-</nav>
 <!-- Footer -->
 <footer class="w-full py-12 px-6 md:px-12 mt-12 flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container dark:bg-tertiary-container border-t border-outline-variant">
 <div class="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
